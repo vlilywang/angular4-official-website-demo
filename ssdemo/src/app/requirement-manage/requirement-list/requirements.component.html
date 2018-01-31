@@ -1,0 +1,23 @@
+<div class="filter-condition">
+    <div>
+        科目： 价格区间：
+        <input /> ~ <input /> 性别：
+    </div>
+</div>
+
+<div>
+    <label>subject: </label><input #subject />
+    <button (click)="add(subject.value); subject.value=''">Add </button>
+</div>
+<ul class="requirements">
+    <li *ngFor="let requir of requirs" (click)="onSelect(requir)" [class.selected]="requir === selectedRequir">
+        <span class="badge">{{requir.id}}</span> {{requir.subject}}
+        <button class="delete" (click)="delete(require); $event.stopPropagation()">x</button>
+    </li>
+</ul>
+<div *ngIf="selectedRequir">
+    <h2>
+        {{selectedRequir.subject | uppercase}} is the require
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>

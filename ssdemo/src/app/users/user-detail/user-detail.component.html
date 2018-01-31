@@ -1,0 +1,21 @@
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+<div *ngIf="user">
+    <h2>{{user.username}} details!</h2>
+    <div>
+        <label>id: </label>{{user.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="user.username" required placeholder="name" />
+    </div>
+    <div>
+        <label>email: </label>
+        <input [(ngModel)]="user.email" placeholder="email" />
+    </div>
+    <div>
+        <label>age: </label>
+        <input type="number" [(ngModel)]="user.age" ng-maxlength="3" ng-model="age" placeholder="age" />
+    </div>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+</div>

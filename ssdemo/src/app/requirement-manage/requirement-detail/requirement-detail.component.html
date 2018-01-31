@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+
+    </div>
+    <div class="row">
+        <div *ngIf="requir">
+            <h2>{{requir.subject}} details!</h2>
+            <div>
+                <label>id: </label>{{requir.id}}</div>
+            <div>
+                <label>subject: </label>
+                <input [(ngModel)]="requir.subject" placeholder="subject" />
+            </div>
+            <div>
+                <label>price: </label>
+                <input [(ngModel)]="requir.price" placeholder="price" />
+            </div>
+            <button (click)="goBack()">Back</button>
+            <button (click)="save()">Save</button>
+        </div>
+    </div>
+</div>
